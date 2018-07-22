@@ -57,6 +57,7 @@
                 customer.CustomerId,
                 customer.Personnummer,
                 customer.Name,
+                customer.Gender,
                 accounts
             );
 

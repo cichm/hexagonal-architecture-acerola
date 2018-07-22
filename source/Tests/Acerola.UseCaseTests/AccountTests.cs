@@ -30,7 +30,7 @@ namespace Acerola.UseCaseTests
         [InlineData("08724050601", "Ivan Paulovich Pinheiro Gomes", 100)]
         [InlineData("08724050601", "Ivan Paulovich", 500)]
         [InlineData("08724050601", "Ivan Paulovich", 100)]
-        public async void Register_Valid_User_Account(string personnummer, string name, double amount)
+        public async void Register_Valid_User_Account(string personnummer, string name, string gender, double amount)
         {
             var registerUseCase = new RegisterService(
                 customerWriteOnlyRepository,
@@ -40,6 +40,7 @@ namespace Acerola.UseCaseTests
             var request = new RegisterCommand(
                 personnummer,
                 name,
+                gender,
                 amount
             );
 
@@ -57,7 +58,7 @@ namespace Acerola.UseCaseTests
         public async void Deposit_Valid_Amount(string accountId, double amount)
         {
             var account = new Account(Guid.NewGuid());
-            var customer = new Customer("08724050601", "Ivan Paulovich");
+            var customer = new Customer("08724050601", "Ivan Paulovich", "male");
 
             accountReadOnlyRepository
                 .Get(Guid.Parse(accountId))

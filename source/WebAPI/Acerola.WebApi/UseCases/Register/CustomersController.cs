@@ -22,7 +22,7 @@
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]RegisterRequest request)
         {
-            var command = new RegisterCommand(request.Personnummer, request.Name, request.InitialAmount);
+            var command = new RegisterCommand(request.Personnummer, request.Name, request.Gender, request.InitialAmount);
             RegisterResult result = await registerService.Process(command);
 
             List<TransactionModel> transactions = new List<TransactionModel>();
@@ -49,6 +49,7 @@
                 result.Customer.CustomerId,
                 result.Customer.Personnummer,
                 result.Customer.Name,
+                result.Customer.Gender,
                 accounts
             );
 

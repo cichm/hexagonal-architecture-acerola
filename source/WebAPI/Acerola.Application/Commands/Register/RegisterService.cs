@@ -20,7 +20,7 @@
 
         public async Task<RegisterResult> Process(RegisterCommand command)
         {
-            Customer customer = new Customer(command.Personnummer, command.Name);
+            Customer customer = new Customer(command.Personnummer, command.Name, command.Gender);
 
             Account account = new Account(customer.Id);
             account.Deposit(command.InitialAmount);

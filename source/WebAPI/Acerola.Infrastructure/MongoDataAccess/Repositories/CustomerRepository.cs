@@ -30,7 +30,7 @@
             AccountCollection accountCollection = new AccountCollection();
             accountCollection.Add(accounts.AsEnumerable());
 
-            return new Customer(customer.Id, customer.Name, customer.SSN, accountCollection);
+            return new Customer(customer.Id, customer.Name, customer.Gender, customer.SSN, accountCollection);
         }
 
         public async Task Add(Customer customer)
@@ -39,6 +39,7 @@
             {
                 Id = customer.Id,
                 Name = customer.Name,
+                Gender = customer.Gender,
                 SSN = customer.SSN
             };
 
@@ -52,6 +53,7 @@
             {
                 Id = customer.Id,
                 Name = customer.Name,
+                Gender = customer.Gender,
                 SSN = customer.SSN
             };
 

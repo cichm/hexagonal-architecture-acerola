@@ -43,12 +43,13 @@
                 accountsResult.Add(accountResult);
             }
 
-            CustomerResult customerResult = new CustomerResult(customer.Id, customer.SSN, customer.Name, null);
+            CustomerResult customerResult = new CustomerResult(customer.Id, customer.SSN, customer.Name, customer.Gender, null);
 
             customerResult = new CustomerResult(
                 customerResult.CustomerId,
                 customerResult.Personnummer,
                 customerResult.Name,
+                customerResult.Gender,
                 accountsResult);
 
             return customerResult;

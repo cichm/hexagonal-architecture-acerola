@@ -18,7 +18,7 @@
             if (!match.Success)
                 throw new InvalidSSNException("Invalid SSN format. Use YYMMDDNNNN.");
 
-            this._text = text;
+            _text = text;
         }
 
         public override string ToString()
