@@ -6,7 +6,7 @@ namespace Acerola.Application.Commands.Register
     {
         public string Personnummer { get; private set; }
         public string Name { get; private set; }
-        public Gender Gender { get; private set; }
+        public string Gender { get; private set; }
         public double InitialAmount { get; private set; }
 
         public RegisterCommand(string personnummer, string name, string gender, double initialAmount)

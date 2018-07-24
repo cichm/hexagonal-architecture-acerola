@@ -26,10 +26,10 @@ namespace Acerola.UseCaseTests
         }
 
         [Theory]
-        [InlineData("08724050601", "Ivan Paulovich", 300)]
-        [InlineData("08724050601", "Ivan Paulovich Pinheiro Gomes", 100)]
-        [InlineData("08724050601", "Ivan Paulovich", 500)]
-        [InlineData("08724050601", "Ivan Paulovich", 100)]
+        [InlineData("08724050601", "Ivan Paulovich", "male", 300)]
+        [InlineData("08724050601", "Ivan Paulovich Pinheiro Gomes", "male", 100)]
+        [InlineData("08724050601", "Ivan Paulovich", "male", 500)]
+        [InlineData("08724050601", "Ivan Paulovich", "male", 100)]
         public async void Register_Valid_User_Account(string personnummer, string name, string gender, double amount)
         {
             var registerUseCase = new RegisterService(

@@ -66,7 +66,8 @@ namespace Acerola.IntegrationTests
             {
                 personnummer = "08724050601",
                 name = "Ivan Paulovich",
-                initialAmount = initialAmount
+                initialAmount = initialAmount,
+                gender = "male"
             };
 
             string registerData = JsonConvert.SerializeObject(register);
